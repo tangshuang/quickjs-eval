@@ -20,11 +20,11 @@ npm i quickjs-eval
 ```js
 import { getInstace } from 'quickjs-eval'
 
-getInstance().(({ eval, newFunction }) => {
+getInstance().then(({ eval, newFunction }) => {
   const total = eval('1 + 2 + 3')
   console.log(total)
 
-  const fn = newFunction(['a', 'b'], 'a + b')
+  const fn = newFunction(['a', 'b'], 'return a + b')
   const sum = fn(1, 2)
   console.log(sum)
 })
