@@ -1,6 +1,6 @@
 {
   "name": "quickjs-eval",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "eval js code in browser by quickjs",
   "main": "lib/index.js",
   "directories": {
