@@ -18,7 +18,7 @@ npm i quickjs-eval
 ```
 
 ```js
-import { getInstace } from 'quickjs-eval'
+import { getInstace, eval, newFunction, fn } from 'quickjs-eval'
 
 getInstance().then(({ eval, newFunction }) => {
   const total = eval('1 + 2 + 3')
@@ -28,6 +28,15 @@ getInstance().then(({ eval, newFunction }) => {
   const sum = fn(1, 2)
   console.log(sum)
 })
+
+eval('1 + 2 + 3').then(res => console.log(res))
+
+newFunction(['a', 'b'], 'return a + b').then(fn => fn(1, 2)).then(res => console.log(res))
+
+fn(`function (a, b) { return a + b }`)(1, 2).then(res => console.log(res))
+
+const func = fn(`function (a, b) { return a + b }`)
+func(1, 2).then(res => console.log(res))
 ```
 
 ## Development
